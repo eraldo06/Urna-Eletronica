@@ -6,3 +6,32 @@ let descricao = s('.d-1-4')
 let aviso = s('.d2')
 let lateral = s('.d-1-right')
 let numeros = s('.d-1-3')
+
+let etapataAtual = 0;
+
+function comecarEtapa(){
+    let etapa = etapas[etapataAtual]
+
+    let numeroHTML = '';
+
+    seuVotoPara.style.display = 'none';
+    cargo.innerHTML = etapa.titulo;
+    descricao.innerHTML = ''
+    aviso.style.display = 'none';
+    lateral.innerHTML = '';
+    numeros.innerHTML = numeroHTML;
+
+}
+
+function clicou(n){
+    alert('Clicou em '+n)
+}
+function branco(){
+    alert('Clicou em BRANCO')
+}
+function corrige(){
+    alert('Clicou em CORRIGE')
+}
+function confirma(){
+    alert('Clicou em CONFIRMA')
+}
