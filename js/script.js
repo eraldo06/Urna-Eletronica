@@ -1,5 +1,6 @@
-const s = (a)=>document.querySelector(a);
+const s = (a) => document.querySelector(a);
 
+// pegando os elementos no html
 let seuVotoPara = s('.d-1-1 span')
 let cargo = s('.d-1-2 span')
 let descricao = s('.d-1-4')
@@ -7,21 +8,22 @@ let aviso = s('.d-2')
 let lateral = s('.d-1-right')
 let numeros = s('.d-1-3')
 
+// Variaveis de toda aplicação
 let etapataAtual = 0;
 let numero = '';
 
-function comecarEtapa(){
+// Essa função deixa todo o HTML limpo, só com as informções do candidato
+function comecarEtapa() {
     let etapa = etapas[etapataAtual]
-
     let numeroHTML = '';
-   
 
-    for (let i=0; i<etapa.numeros; i++){
-       if(i===0){
-        numeroHTML += '<div class="numero pisca"></div>';
-       } else{
-        numeroHTML += '<div class="numero"></div>';
-       }
+
+    for (let i = 0; i < etapa.numeros; i++) {
+        if (i === 0) {
+            numeroHTML += '<div class="numero pisca"></div>';
+        } else {
+            numeroHTML += '<div class="numero"></div>';
+        }
     }
 
     seuVotoPara.style.display = 'none';
@@ -30,16 +32,15 @@ function comecarEtapa(){
     aviso.style.display = 'none';
     lateral.innerHTML = '';
     numeros.innerHTML = numeroHTML;
-
 }
 
-function atualizarInterface(){
+function atualizarInterface() {
     alert('Voto finalizado')
 }
 
-function clicou(n){
+function clicou(n) {
     let elNumero = document.querySelector('.numero.pisca')
-    if(elNumero !== null){
+    if (elNumero !== null) {
         elNumero.innerHTML = n;
         numero = `${numero}${n}`
 
@@ -48,22 +49,19 @@ function clicou(n){
 
         // pegando o proximo elemento
         // no proximo elemento, adicione essa class
-        if(elNumero.nextElementSibling !== null){
+        if (elNumero.nextElementSibling !== null) {
             elNumero.nextElementSibling.classList.add('pisca')
-        }else{
+        } else {
             atualizarInterface()
-        }
-        
-        
-    }
+        }}
 }
-function branco(){
+function branco() {
     alert('Clicou em BRANCO')
 }
-function corrige(){
+function corrige() {
     alert('Clicou em CORRIGE')
 }
-function confirma(){
+function confirma() {
     alert('Clicou em CONFIRMA')
 }
 
