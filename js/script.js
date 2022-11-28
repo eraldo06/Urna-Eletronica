@@ -8,14 +8,20 @@ let lateral = s('.d-1-right')
 let numeros = s('.d-1-3')
 
 let etapataAtual = 0;
+let numero = '';
 
 function comecarEtapa(){
     let etapa = etapas[etapataAtual]
 
     let numeroHTML = '';
+   
 
     for (let i=0; i<etapa.numeros; i++){
+       if(i===0){
+        numeroHTML += '<div class="numero pisca"></div>';
+       } else{
         numeroHTML += '<div class="numero"></div>';
+       }
     }
 
     seuVotoPara.style.display = 'none';
@@ -27,8 +33,29 @@ function comecarEtapa(){
 
 }
 
+function atualizarInterface(){
+    alert('Voto finalizado')
+}
+
 function clicou(n){
-    alert('Clicou em '+n)
+    let elNumero = document.querySelector('.numero.pisca')
+    if(elNumero !== null){
+        elNumero.innerHTML = n;
+        numero = `${numero}${n}`
+
+        elNumero.classList.remove('pisca');
+
+
+        // pegando o proximo elemento
+        // no proximo elemento, adicione essa class
+        if(elNumero.nextElementSibling !== null){
+            elNumero.nextElementSibling.classList.add('pisca')
+        }else{
+            atualizarInterface()
+        }
+        
+        
+    }
 }
 function branco(){
     alert('Clicou em BRANCO')
