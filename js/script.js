@@ -38,7 +38,7 @@ function comecarEtapa() {
 
 function atualizarInterface() {
     let etapa = etapas[etapataAtual]
-    let condidato = etapa.condidatos.filter((item)=>{
+    let candidato = etapa.candidatos.filter((item)=>{
         if(item.numero === numero){
             return true;
         } else{
@@ -46,7 +46,7 @@ function atualizarInterface() {
         }
     });
 
-    console.log('Condidato: ', candidito);
+    console.log('Condidato: ', candidato);
 }
 
 // adicionando os numeros
