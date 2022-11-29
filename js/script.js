@@ -46,7 +46,11 @@ function atualizarInterface() {
         }
     });
 
-    console.log('Condidato: ', candidato);
+    if(candidato.length>0){
+        candidato = candidato[0];
+        seuVotoPara.style.display = 'block';
+        descricao.innerHTML = `Nome: ${candidato.nome}<br/>Partido: ${candidato.partido}`;
+    }
 }
 
 // adicionando os numeros
