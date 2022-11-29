@@ -1,3 +1,4 @@
+// facilitando minha vida
 const s = (a) => document.querySelector(a);
 
 // pegando os elementos no html
@@ -17,7 +18,7 @@ function comecarEtapa() {
     let etapa = etapas[etapataAtual]
     let numeroHTML = '';
 
-
+    // colocando os quadrado dos numeros
     for (let i = 0; i < etapa.numeros; i++) {
         if (i === 0) {
             numeroHTML += '<div class="numero pisca"></div>';
@@ -26,6 +27,7 @@ function comecarEtapa() {
         }
     }
 
+    // limpando a tela
     seuVotoPara.style.display = 'none';
     cargo.innerHTML = etapa.titulo;
     descricao.innerHTML = ''
@@ -35,9 +37,11 @@ function comecarEtapa() {
 }
 
 function atualizarInterface() {
-    alert('Voto finalizado')
+    console.log('Atualizando numero');
+    console.log(numero);
 }
 
+// adicionando os numeros
 function clicou(n) {
     let elNumero = document.querySelector('.numero.pisca')
     if (elNumero !== null) {
