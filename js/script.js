@@ -46,19 +46,21 @@ function atualizarInterface() {
         }
     });
 
-    if(candidato.length>0){
+    if(candidato.length > 0){
         candidato = candidato[0];
         seuVotoPara.style.display = 'block';
         aviso.style.display = 'block'
         descricao.innerHTML = `Nome: ${candidato.nome}<br/>Partido: ${candidato.partido}`;
    
         // colocando a foto
-        for(let i in candidato.fotos){
-        fotosHTML += `<div class="d-1-image"><img src="images/${candidato.fotos[i].url}" alt="" />${candidato.fotos[i].legenda}</div>`
-        }
         let fotosHTML = '';
-
+        for(let i in candidato.fotos){
+             fotosHTML += `<div class="d-1-image"><img src="images/${candidato.fotos[i].url}" alt="" />${candidato.fotos[i].legenda}</div>`
+        }
         lateral.innerHTML = fotosHTML;
+        
+
+        
     }
 }
 
@@ -82,6 +84,7 @@ function clicou(n) {
 }
 function branco() {
     alert('Clicou em BRANCO')
+    comecarEtapa()
 }
 function corrige() {
     alert('Clicou em CORRIGE')
