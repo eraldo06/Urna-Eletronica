@@ -15,6 +15,7 @@ let numero = '';
 
 // Essa função deixa todo o HTML limpo, só com as informções do candidato
 function comecarEtapa() {
+    numero = '';
     let etapa = etapas[etapataAtual]
     let numeroHTML = '';
 
@@ -60,7 +61,7 @@ function atualizarInterface() {
     } else {
         seuVotoPara.style.display = 'block';
         aviso.style.display = 'block'
-        descricao.innerHTML = '<div class="aviso--grande">VOTO NULO</div>'
+        descricao.innerHTML = '<div class="aviso--grande pisca">VOTO NULO</div>'
     }
 }
 
@@ -88,7 +89,7 @@ function branco() {
     comecarEtapa()
 }
 function corrige() {
-    alert('Clicou em CORRIGE')
+    comecarEtapa()
 }
 function confirma() {
     alert('Clicou em CONFIRMA')
