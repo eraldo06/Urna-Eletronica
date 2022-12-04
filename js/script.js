@@ -12,12 +12,14 @@ let numeros = s('.d-1-3')
 // Variaveis de toda aplicação
 let etapataAtual = 0;
 let numero = '';
+let brancoo = false;
 
 // Essa função deixa todo o HTML limpo, só com as informções do candidato
 function comecarEtapa() {
     numero = '';
     let etapa = etapas[etapataAtual]
     let numeroHTML = '';
+    brancoo = false;
 
     // colocando os quadrado dos numeros
     for (let i = 0; i < etapa.numeros; i++) {
@@ -85,8 +87,7 @@ function clicou(n) {
     }
 }
 function branco() {
-    alert('Clicou em BRANCO')
-    comecarEtapa()
+    brancoo = true;
 }
 function corrige() {
     comecarEtapa()
