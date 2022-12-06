@@ -13,6 +13,7 @@ let numeros = s('.d-1-3')
 let etapataAtual = 0;
 let numero = '';
 let votoBranco = false;
+let votos = [];
 
 // Essa função deixa todo o HTML limpo, só com as informções do candidato
 function comecarEtapa() {
@@ -111,10 +112,16 @@ function confirma() {
 
     if(votoBranco === true){
         votoConfirmado = true;
-        console.log('voto brnaco');
+        votos.push({
+            etapa: etapas[etapataAtual].titulo,
+            voto:'branco'
+        })
     }else if(numero.length === etapa.numeros){
         votoConfirmado = true;
-        console.log('voto comifrmado'+numero);
+        votos.push({
+            etapa: etapas[etapataAtual].titulo,
+            voto: numero
+        })
     }
 
     if(votoConfirmado){
@@ -123,6 +130,7 @@ function confirma() {
             comecarEtapa()
         }else{
             document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>';
+            console.log(votos);
         }
     }
 }
